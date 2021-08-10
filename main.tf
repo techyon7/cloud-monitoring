@@ -185,17 +185,6 @@ resource "aws_instance" "terraform-test-2" {
   vpc_security_group_ids = [aws_security_group.allow_ports.id]
   key_name               = "monitoring-key"
 
-
-  # provisioner "file" {
-  #   source      = "data/cw.yaml"
-  #   destination = "/etc/grafana/provisioning/datasources"
-  # }
-
-  # provisioner "remote-exec" {
-  #   inline = [
-  #     "sudo systemctl restart grafana-server",
-  #   ]
-  # }
   tags = {
     Name = "Terraform"
   }
